@@ -1,0 +1,35 @@
+doctype 5
+html(lang="en")
+    head
+        style.
+            h1,
+            {
+                color: #343434;
+                margin-bottom:0px;
+            }
+
+            * {
+                box-sizing: border-box;
+                font-family: "Lato", "sans-serif";
+            }
+
+
+            .air-quality-box {
+                border-bottom: 2px dashed #b3b3b3;
+                padding: 20px 0;
+
+            }
+
+            .air-quality-box h3 {
+                margin: 0px 0 5px 0;
+            }
+
+            .air-quality-box > img {
+                width: 500px;
+            }
+    body
+        h1 Air quality alerts 
+        each val in airQuality
+            section.air-quality-box
+                h3 #{val.indicator} Value - #{val.current_value}
+                img(src=`cid:${val.cid}`)

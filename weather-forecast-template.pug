@@ -1,0 +1,66 @@
+doctype 5
+html(lang="en")
+    head
+        style.
+            h1,
+            h2,
+            h3,
+            h4 {
+                color: #343434;
+            }
+
+            * {
+                box-sizing: border-box;
+                font-family: "Lato", "sans-serif";
+            }
+
+            .weather-box {
+                display: flex;
+                border-bottom: 2px dashed #b3b3b3;
+                padding: 20px 0;
+            }
+
+            .weather-box h4 {
+                margin: 0 0 5px 0;
+            }
+            .weather-box p {
+                margin: 8px 0;
+            }
+
+            .weather-box > div {
+                margin-right: 20px;
+            }
+
+            .air-quality-box {
+                border-bottom: 2px dashed #b3b3b3;
+                padding: 20px 0;
+
+            }
+
+            .air-quality-box h3 {
+                margin: 0px 0 5px 0;
+            }
+
+            .air-quality-box > img {
+                width: 500px;
+            }
+    body
+        h1 Weather forecast for today - #{day}
+        each val in weatherForecast
+            section.weather-box
+                div(style="text-align:center")
+                    h4 Hour: #{val.hour}
+                    img(src=`cid:${val.cid}`)
+                div
+                    p(style="margin:0") Temperature: #{val.temp} #{val.temp_unit}
+                  
+                    p Wind Speed: #{val.wind_speed} #{val.wind_speed_unit}
+                  
+                    p Humidity: #{val.humidity} #{val.humidity_unit}
+
+        br
+        h1 Current air quality 
+        each val in airQuality
+            section.air-quality-box
+                h3 #{val.indicator} Value - #{val.current_value}
+                img(src=`cid:${val.cid}`)

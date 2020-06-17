@@ -1,0 +1,6 @@
+{
+  "host": "<email server host>",
+  "user": "<email_addr>",
+  "pass": "<email_pwd>",
+  "cc_key": "<climacell_api_key>"
+}
