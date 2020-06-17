@@ -173,9 +173,6 @@ async function sendAirQualityEmailAlert(airQualityData, attachments) {
     attachments,
   };
 
-  console.log(htmlToSend);
-  return;
-
   await transporter.sendMail(mailOptions);
 }
 
